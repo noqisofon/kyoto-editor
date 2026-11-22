@@ -1,0 +1,17 @@
+[package]
+name = "kyoto-tui"
+description = "Terminal UI for the kyoto editor"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "kyoto"
+path = "src/main.rs"
+
+[dependencies]
+kyoto-core = { path = "../kyoto-core" }
+crossterm = "0.29.0"
+ratatui = "0.30.2"
+unicode-segmentation = "1.13.3"
+unicode-width = "0.2.3"

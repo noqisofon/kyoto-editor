@@ -1,0 +1,11 @@
+[package]
+name = "kyoto-core"
+description = "UI-independent core of the kyoto editor: text buffer, editing commands, CUA keymap and Koto configuration"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+koto = "0.16.1"
+unicode-segmentation = "1.13.3"
+unicode-width = "0.2.3"

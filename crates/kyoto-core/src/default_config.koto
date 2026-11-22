@@ -1,0 +1,36 @@
+# kyoto configuration (Koto language: https://koto.dev)
+#
+# Save as ~/.config/kyoto/config.koto (or point $KYOTO_CONFIG at it).
+# Everything under `export` is read by the editor; the rest is ordinary Koto,
+# so you can use variables, functions, loops, etc. to build your settings.
+
+export
+  # Indentation
+  tab_width: 4
+  insert_spaces: true
+  auto_indent: true
+
+  # Gutter
+  line_numbers: true
+
+  # Colors: '#rrggbb', '#rgb', a name (red, light_blue, ...), 'ansi:N' or 'reset'.
+  theme:
+    selection_bg: '#264f78'
+    line_number: 'dark_gray'
+    current_line_number: 'white'
+    status_fg: 'black'
+    status_bg: 'light_cyan'
+
+  # The default keymap is CUA (Ctrl+C/X/V, Ctrl+Z/Y, Ctrl+A, Ctrl+S, Ctrl+Q,
+  # Ctrl+F, Shift+arrows, Ctrl+arrows, ...). Entries here add to or override it.
+  #
+  # A value may be
+  #   - a command name (see `kyoto --list-commands`),
+  #   - `null` to remove a binding,
+  #   - a function: it gets a context map (selection, line, line_number,
+  #     column, path) and returns a string that replaces the selection,
+  #     or null to do nothing.
+  keybindings:
+    'ctrl+shift+u': |ctx| ctx.selection.to_uppercase()
+    'ctrl+shift+l': |ctx| ctx.selection.to_lowercase()
+    'ctrl+r': 'reload_config'
